@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Tareas con Calendario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Organizador de Tareas</h1>
+
+        <div class="app-layout">
+            <div class="calendar-container">
+                <h2>Calendario</h2>
+                <div class="calendar-header">
+                    <button id="prev-month">&lt;</button>
+                    <h3 id="month-year"></h3>
+                    <button id="next-month">&gt;</button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div>Dom</div><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div>
+                </div>
+                <div class="calendar-grid" id="calendar-grid">
+                    <!-- Los días se generarán aquí -->
+                </div>
+            </div>
+
+            <div class="tasks-section">
+                <h2>Tareas para: <span id="selected-date-display">Ningún día seleccionado</span></h2>
+                
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="Nueva tarea..." required>
+                    <button type="submit">Agregar Tarea</button>
+                </form>
+
+                <div class="task-filters">
+                    <button data-filter="all" class="active">Todas</button>
+                    <button data-filter="active">Activas</button>
+                    <button data-filter="completed">Completadas</button>
+                </div>
+
+                <ul id="task-list">
+                    <!-- Las tareas se mostrarán aquí -->
+                </ul>
+                <p id="no-tasks-message" class="hidden">No hay tareas para este día.</p>
+                <button id="clear-completed-tasks" class="hidden">Limpiar Completadas</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
